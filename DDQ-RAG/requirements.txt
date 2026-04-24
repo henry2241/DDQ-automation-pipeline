@@ -1,0 +1,50 @@
+# Core RAG and LLM Libraries
+llama-index==0.10.37
+langchain
+langchain-community
+anthropic
+
+# Document Processing
+unstructured[pdf]
+pdfplumber
+camelot-py
+pypdf
+pandas
+openpyxl
+
+# LLM and Embedding Models
+openai
+sentence-transformers
+transformers
+torch
+
+# Vector Store
+chromadb
+qdrant-client
+faiss-cpu
+rank-bm25
+
+# Re-ranking
+cohere
+
+# Utilities
+numpy
+scikit-learn==1.3.2
+python-dotenv
+pydantic
+pydantic-settings
+
+# Logging and CLI
+loguru
+tqdm
+
+# Web Server (Optional)
+fastapi
+uvicorn
+
+# Development Tools
+pytest
+black
+flake8
+ipython
+jupyter

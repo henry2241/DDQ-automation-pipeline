@@ -1,0 +1,100 @@
+{
+  "system": {
+    "version": "1.0.0",
+    "environment": "production",
+    "debug_mode": false,
+    "max_processing_time_seconds": 300,
+    "max_concurrent_requests": 10
+  },
+  "quality_thresholds": {
+    "gap_detection_accuracy": 85.0,
+    "compliance_coverage": 95.0,
+    "depth_score_minimum": 70.0,
+    "risk_score_maximum": 25.0,
+    "consistency_score_minimum": 75.0
+  },
+  "processing_stages": {
+    "gap_detection_enabled": true,
+    "gap_detection_timeout": 30,
+    "gap_detection_retries": 2,
+    "compliance_check_enabled": true,
+    "compliance_check_timeout": 40,
+    "compliance_check_retries": 3,
+    "depth_analysis_enabled": true,
+    "depth_analysis_timeout": 45,
+    "depth_analysis_retries": 2,
+    "risk_assessment_enabled": true,
+    "risk_assessment_timeout": 35,
+    "risk_assessment_retries": 2,
+    "disclaimer_insertion_enabled": true,
+    "disclaimer_insertion_timeout": 20,
+    "disclaimer_insertion_retries": 2
+  },
+  "audit_settings": {
+    "log_directory": "/var/log/ddq_audit_logs",
+    "retention_days": 90,
+    "max_file_size_mb": 50,
+    "enable_console_output": false,
+    "log_level": "INFO",
+    "enable_performance_monitoring": true,
+    "track_processing_times": true,
+    "track_quality_metrics": true
+  },
+  "compliance_settings": {
+    "critical_violation_weight": 25.0,
+    "high_violation_weight": 15.0,
+    "medium_violation_weight": 8.0,
+    "low_violation_weight": 3.0,
+    "compliance_grade_a_max": 5.0,
+    "compliance_grade_b_max": 15.0,
+    "compliance_grade_c_max": 30.0,
+    "compliance_grade_d_max": 50.0,
+    "enable_auto_fix": true,
+    "auto_insert_disclaimers": true,
+    "max_auto_fixes_per_response": 10
+  },
+  "custom": {
+    "regulatory_frameworks": {
+      "primary": "SEC_INVESTMENT_ADVISERS_ACT",
+      "secondary": ["SEC_INVESTMENT_COMPANY_ACT", "FIDUCIARY_STANDARDS"],
+      "monitoring": ["CFTC_COMMODITY_POOL_OPERATORS", "FINRA_RULES"]
+    },
+    "firm_defaults": {
+      "default_firm_type": "investment_adviser",
+      "default_client_types": ["institutional"],
+      "default_disclaimers_required": true
+    },
+    "gap_detection_tuning": {
+      "interpretive_content_threshold": 0.3,
+      "factual_density_minimum": 0.6,
+      "source_citation_minimum": 1.5,
+      "specificity_score_target": 0.7
+    },
+    "compliance_tuning": {
+      "performance_claim_sensitivity": "high",
+      "guarantee_language_sensitivity": "critical",
+      "disclaimer_insertion_mode": "automatic",
+      "risk_disclosure_enforcement": "strict"
+    },
+    "depth_analysis_tuning": {
+      "minimum_word_count": 200,
+      "target_word_range": [300, 500],
+      "maximum_word_count": 800,
+      "component_coverage_minimum": 80.0
+    },
+    "risk_assessment_tuning": {
+      "fiduciary_risk_weight": 1.3,
+      "performance_advertising_weight": 1.2,
+      "misleading_statement_weight": 1.4,
+      "disclosure_adequacy_weight": 1.1
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2024-01-15T10:00:00Z",
+    "environment": "production",
+    "config_schema_version": "1.0",
+    "created_by": "DDQ_System_Setup",
+    "description": "Production configuration for Clara DDQ Gap Compliance System"
+  }
+}
